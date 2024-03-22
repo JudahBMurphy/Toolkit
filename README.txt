@@ -1,0 +1,1 @@
+Toolkit is intended as a reference guide for material learned through the LaunchSchool courses. It is primarily a reference guide REPL for looking up syntax or concepts for Python, Terminal, or Git.
