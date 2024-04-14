@@ -3,6 +3,7 @@
 
 import toolkit_python
 import toolkit_terminal
+import toolkit_python_functions
 
 
 def terminal_menu_loop():
@@ -49,6 +50,9 @@ Note: 'x' indicates name of file or directory. 'y' indicates a path.
  	git diff origin/main - Display differences between local and remote repo
  	git pull --ff-only - copy the remote repository into the local repository
  	git clone <remote repository url> <local directory name> - clone a remote repository
+ 	git checkout branch_name - switch to specified git branch
+ 	git checkout -b branch_name - create a new branch and checks it out
+ 	git merge branch_name - From main, merge the specified branch into main
 	''')
 
 def python_menu_loop():
@@ -76,6 +80,9 @@ Choose from list by typing in corresponding number:
 			case 3:
 				loop_controller = True
 				toolkit_python.loop_library()
+			case 4:
+				loop_controller = True
+				toolkit_python_functions.display_functions_methods_library()
 			case 5:
 				loop_controller = True
 				toolkit_python.concept_library()
