@@ -1,0 +1,29 @@
+Concept: Create a program that fills the following functions:
+	1. Syntax reference guide for the Terminal, Git, and Python
+	2. Reference guide for general concepts, acting as REPL notebook while progressing through the LauncSchool Course
+
+- Ask user what language/area they need to reference (Terminal, Git, Python, etc.)
+	- Take user input
+	- Ask user input if they want to reference syntax or review concepts
+	- Take User input
+	- Direct user to
+START
+
+def terminate_program():
+	- checks if user input is '0' and terminates program if true
+
+def check_user_input():
+	- verifys the user input is valid and gives the user the opportunity to reattempt input (calls terminate_program function)
+
+def display_list_selection_choices(list):
+	-iterate through a list and print each item with a corresponding number
+
+SET topic_list = [Terminal, Git, Python]
+
+PRINT display_list_selection_choices(topic_list)
+GET check_user_input(input)
+IF input is in topic list:
+	
+
+
+

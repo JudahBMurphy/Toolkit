@@ -1,0 +1,16 @@
+{
+	"git init": "Creates git repository in current directory.",
+	"git status": "Display status of files in git repository",
+	"git add x": "Stages file for the next commit",
+	"git commit -m ' commit message'": "Commits staged files to the repository",
+	"git log": "Display the commit history",
+	"git remote add origin https://github.com/GITHUBUSERNAME/REPONAME.git": "add a remote repo",
+	"git push -u origin main": "push commits to the remote repo",
+	"git fetch": "fetch commits from the remote repo",
+	"git diff origin/main": "Display differences between local and remote repo",
+	"git pull --ff-only": "copy the remote repository into the local repository",
+	"git clone <remote repository url> <local directory name>": "clone a remote repository",
+	"git checkout branch_name": "switch to specified git branch",
+	"git checkout -b branch_name": "create a new branch and checks it out",
+	"git merge branch_name": "From main, merge the specified branch into main"
+}
