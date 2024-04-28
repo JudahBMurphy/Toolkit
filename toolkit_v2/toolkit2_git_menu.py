@@ -1,16 +1,3 @@
-import json
-import nav_functions
-
-with open('toolkit2_git_messages.json','r') as file:
-    MESSAGES = json.load(file)
-
-def messages(message):
-    return MESSAGES[message]
-
-def display__git_syntax_library(list):
-    for item in list:
-        print(f'{nav_functions.indent(4)}{item}: {messages(item)}')
-
 git_commands = [
     "git init",
     "git status",

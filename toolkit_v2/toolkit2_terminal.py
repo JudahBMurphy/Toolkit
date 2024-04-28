@@ -1,16 +1,3 @@
-import json
-import nav_functions
-
-with open('toolkit2_terminal_messages.json','r') as file:
-    MESSAGES = json.load(file)
-
-def messages(message):
-    return MESSAGES[message]
-
-def display__terminal_syntax_library(list):
-    for item in list:
-        print(f'{nav_functions.indent(4)}{item}: {messages(item)}')
-
 terminal_nav_commands = [
     "man x",
     "cd x",

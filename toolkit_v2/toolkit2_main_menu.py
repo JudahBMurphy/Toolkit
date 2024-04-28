@@ -31,23 +31,29 @@ match topic_selection:
 		match category_selection:
 			case 1:
 				print('See below reference commands for navigating the terminal:')
-				nav_cmds = toolkit2_terminal.terminal_nav_commands
-				toolkit2_terminal.display__terminal_syntax_library(nav_cmds)
+				terminal_list = toolkit2_terminal.terminal_nav_commands
+				terminal_selection = return_list_selection(terminal_list)
+				nav_functions.display_definition(terminal_list, terminal_selection,'toolkit2_terminal_messages.json')
 			case 2:
 				print('See below reference commands for interacting with files and directories:')
-				dir_cmds = toolkit2_terminal.terminal_file_dir_commands
-				toolkit2_terminal.display__terminal_syntax_library(dir_cmds)
+				terminal_list = toolkit2_terminal.terminal_file_dir_commands
+				terminal_selection = return_list_selection(terminal_list)
+				nav_functions.display_definition(terminal_list, terminal_selection,'toolkit2_terminal_messages.json')
 			case 3:
 				print('See below reference commands for making changes to the Terminal environment:')
-				env_cmds = toolkit2_terminal.terminal_env_commands
-				toolkit2_terminal.display__terminal_syntax_library(env_cmds)
+				terminal_list = toolkit2_terminal.terminal_env_commands
+				terminal_selection = return_list_selection(terminal_list)
+				nav_functions.display_definition(terminal_list, terminal_selection,'toolkit2_terminal_messages.json')
 			case 4:
 				print('See below explaination of permissions concepts:')
 				print(f'{toolkit2_terminal.terminal_permissions}')
+				
 	# Git help menu		
 	case 2:
 		print('Please see below for list of git commands:')
-		toolkit2_git_menu.display__git_syntax_library(toolkit2_git_menu.git_commands)
+		git_list = toolkit2_git_menu.git_commands
+		git_selection = return_list_selection(git_list)
+		nav_functions.display_definition(git_list, git_selection,'toolkit2_git_messages.json')
 	# Python help menu
 	case 3:
 		python_help_options = ['Syntax Reference','Concept Review']
@@ -102,4 +108,5 @@ match topic_selection:
 				print(f'{nav_functions.indent(4)}{method_selection}:')
 				nav_functions.display_selection(sub_cat, 8)
 				conc_select = nav_functions.return_user_input_from_selection(sub_cat)
-				python_concept_library.display_python_concept(sub_cat, conc_select)
+				nav_functions.display_definition(sub_cat, conc_select, 'python_concept_messages.json')
+				#python_concept_library.display_python_concept(sub_cat, conc_select)
