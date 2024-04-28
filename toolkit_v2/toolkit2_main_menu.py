@@ -4,9 +4,9 @@ import toolkit2_terminal
 import python_concept_library
 import python_syntax_library
 
-def return_list_selection(list):
-	nav_functions.display_list_selection(list, 4)
-	selection = nav_functions.return_user_input_from_selection(list)
+def return_list_selection(collection):
+	nav_functions.display_selection(collection, 4)
+	selection = nav_functions.return_user_input_from_selection(collection)
 	return selection
 
 
@@ -17,6 +17,7 @@ print('Welcome to Toolkit. What subject do you need to reference:')
 topic_selection = return_list_selection(topic_list)
 
 match topic_selection:
+	# Terminal help menu
 	case 1:
 		terminal_options = [
 			'Navigation',
@@ -43,29 +44,62 @@ match topic_selection:
 			case 4:
 				print('See below explaination of permissions concepts:')
 				print(f'{toolkit2_terminal.terminal_permissions}')
+	# Git help menu		
 	case 2:
 		print('Please see below for list of git commands:')
 		toolkit2_git_menu.display__git_syntax_library(toolkit2_git_menu.git_commands)
+	# Python help menu
 	case 3:
 		python_help_options = ['Syntax Reference','Concept Review']
 		print(f'Please select what you need help with:')
 		help_selection = return_list_selection(python_help_options)
 
 		match help_selection:
+			# Python syntax reference menu
 			case 1:
 				print('Select from the following categories:')
 				syntax_selection = return_list_selection(python_syntax_library.syntax_categories)
-				nav_functions.display_list_selection(python_syntax_library.built_in_functions, 4)
-				bi_funcs = python_syntax_library.built_in_functions
-				bi_func_selection = nav_functions.return_user_input_from_selection(bi_funcs)
-				python_syntax_library.display_list_item_message(bi_func_selection, bi_funcs)
+
+				match syntax_selection:
+					# Operators
+					case 1:
+						method_loc = python_syntax_library.operator_dict
+						method_selection = return_list_selection(method_loc)
+						python_syntax_library.display_python_syntax(method_selection, method_loc, "Operators")
+					# Built in functions
+					case 2:
+						method_loc = python_syntax_library.built_in_functions_dict
+						print(f'{nav_functions.indent(4)}Official documentation for built-in functions:')
+						print(f'{nav_functions.indent(4)}https://docs.python.org/3/library/functions.html')
+						method_selection = return_list_selection(method_loc)
+						python_syntax_library.display_python_syntax(method_selection, method_loc, "Arguments")
+					# String methods
+					case 3:
+						method_loc = python_syntax_library.string_methods
+						print(f'{nav_functions.indent(4)}Official documentation for string methods:')
+						print(f'{nav_functions.indent(4)}https://docs.python.org/3/library/stdtypes.html#string-methods')
+						method_selection = return_list_selection(method_loc)
+						python_syntax_library.display_python_syntax(method_selection, method_loc, "")
+					# List methods
+					case 4:
+						method_loc = python_syntax_library.list_methods
+						method_selection = return_list_selection(method_loc)
+						python_syntax_library.display_python_syntax(method_selection, method_loc, "")
+					# Dictionary Methods
+					case 5:
+						method_loc = python_syntax_library.dict_methods
+						method_selection = return_list_selection(method_loc)
+						python_syntax_library.display_python_syntax(method_selection, method_loc, "")
+					case _:
+						print("Option not currently available.")
+			# Python concept reference menu
 			case 2:
 				print('Select from the following concept categories:')
-				nav_functions.display_dict_selection(python_concept_library.macro_categories_dict, 4)
-				macro_cat = python_concept_library.macro_categories_dict
-				macro_selection = nav_functions.return_user_input_from_selection(macro_cat)
-				sub_cat = python_concept_library.macro_categories_dict[macro_selection]
-				print(f'{nav_functions.indent(4)}{macro_selection}:')
-				nav_functions.display_list_selection(sub_cat, 8)
+				method_loc = python_concept_library.macro_categories_dict
+				method_selection = return_list_selection(method_loc)
+				sub_cat = python_concept_library.macro_categories_dict[method_selection]
+
+				print(f'{nav_functions.indent(4)}{method_selection}:')
+				nav_functions.display_selection(sub_cat, 8)
 				conc_select = nav_functions.return_user_input_from_selection(sub_cat)
 				python_concept_library.display_python_concept(sub_cat, conc_select)

@@ -40,18 +40,16 @@ def return_user_input_from_selection(selection):
 		else:
 			print('Not a valid selection. Try again.')
 
-# iterates through list and prints list corresponding to a number
-def display_list_selection(list, padding):
+# iterates through a list/dictionary and prints items/keys corresponding to a number
+def display_selection(collection, padding):
 	iterator = 0
-	while iterator < len(list):
-		print(f'{indent(padding)}{iterator + 1}. {list[iterator]}')
-		iterator += 1
+	if isinstance(collection, list):
+		while iterator < len(collection):
+			print(f'{indent(padding)}{iterator + 1}. {collection[iterator]}')
+			iterator += 1
+	elif isinstance(collection, dict):
+		for key in collection.keys():
+			print(f'{indent(padding)}{iterator + 1}. {key}')
+			iterator += 1
 	print(f'{indent(padding)}0. End program')
-
-# iterates through dictionary and prints dict correcponding to a number
-def display_dict_selection(dict, padding):
-    iterator = 0
-    for key in dict.keys():
-        print(f'{indent(padding)}{iterator + 1}. {key}')
-        iterator += 1
-    print(f'{indent(padding)}0. End program')
+    
