@@ -20,30 +20,49 @@ def display_python_concept(list, selection):
 #def return_user_input_from_dict(dict):
 
 macro_categories_dict = {
-    "Conventions": ["Naming Conventions"],
+    "Conventions": [
+        "Naming Conventions"
+        ],
     "Functions": [
         "Type Coercions",
-        "Definitions and calls",
+        "Definitions and Calls",
         "Return Values",
         "Parameters vs. Arguements",
         "Scope",
         "Nested Functions",
         "Output vs. Return Values",
         "Side Effects"
-    ],
-    "Numbers": ["Exceptions", "Operators"],
-    "Strings": ["f-strings", "String Methods"],
-    "Boolean": ["Truthiness"],
-    "Ranges": ["Ranges", "List Methods"],
+        ],
+    "Numbers": [
+        "Operators",
+        "ValueError",
+        "ZeroDivisionError"
+        ],
+    "Strings": [
+        "f-strings"
+        ],
+    "Boolean": [
+        "Truthiness"
+        ],
+    "Ranges": [
+        "Ranges"
+        ],
     "Compiler Logic": [
         "Mutability",
-        "Expressions vs. Statements",
-        "Shallow vs. Deep Copies"],
+        "Expressions",
+        "Statements",
+        "Shallow vs. Deep Copies"
+        ],
     "Variables": [
         "Intialization and Assignment",
         "Scope",
         "Variables As Pointers",
-        "Variable Shadowing"],
-    "Conditionals and Loops": ["if", "while","for"]
+        "Variable Shadowing"
+        ],
+    "Conditionals and Loops": [
+        "if", 
+        "while",
+        "for"
+        ]
 }
 

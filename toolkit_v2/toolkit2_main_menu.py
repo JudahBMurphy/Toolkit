@@ -71,31 +71,34 @@ match topic_selection:
 					case 1:
 						method_loc = python_syntax_library.operator_dict
 						method_selection = return_list_selection(method_loc)
-						python_syntax_library.display_python_syntax(method_selection, method_loc, "Operators")
+						#python_syntax_library.display_python_syntax(method_selection, method_loc, "Operators")
+						nav_functions.display_library_dict(method_loc, method_selection, 'python_syntax_messages.json')
 					# Built in functions
 					case 2:
 						method_loc = python_syntax_library.built_in_functions_dict
 						print(f'{nav_functions.indent(4)}Official documentation for built-in functions:')
 						print(f'{nav_functions.indent(4)}https://docs.python.org/3/library/functions.html')
 						method_selection = return_list_selection(method_loc)
-						python_syntax_library.display_python_syntax(method_selection, method_loc, "Arguments")
+						#python_syntax_library.display_python_syntax(method_selection, method_loc, "Arguments")
+						nav_functions.display_library_dict(method_loc, method_selection, 'python_syntax_messages.json')
 					# String methods
 					case 3:
 						method_loc = python_syntax_library.string_methods
 						print(f'{nav_functions.indent(4)}Official documentation for string methods:')
 						print(f'{nav_functions.indent(4)}https://docs.python.org/3/library/stdtypes.html#string-methods')
 						method_selection = return_list_selection(method_loc)
-						python_syntax_library.display_python_syntax(method_selection, method_loc, "")
+						nav_functions.display_library_dict(method_loc, method_selection, 'python_syntax_messages.json')
+						#python_syntax_library.display_python_syntax(method_selection, method_loc, "")
 					# List methods
 					case 4:
 						method_loc = python_syntax_library.list_methods
 						method_selection = return_list_selection(method_loc)
-						python_syntax_library.display_python_syntax(method_selection, method_loc, "")
+						nav_functions.display_library_dict(method_loc, method_selection, 'python_syntax_messages.json')
 					# Dictionary Methods
 					case 5:
 						method_loc = python_syntax_library.dict_methods
 						method_selection = return_list_selection(method_loc)
-						python_syntax_library.display_python_syntax(method_selection, method_loc, "")
+						nav_functions.display_library_dict(method_loc, method_selection, 'python_syntax_messages.json')
 					case _:
 						print("Option not currently available.")
 			# Python concept reference menu
@@ -109,4 +112,3 @@ match topic_selection:
 				nav_functions.display_selection(sub_cat, 8)
 				conc_select = nav_functions.return_user_input_from_selection(sub_cat)
 				nav_functions.display_definition(sub_cat, conc_select, 'python_concept_messages.json')
-				#python_concept_library.display_python_concept(sub_cat, conc_select)

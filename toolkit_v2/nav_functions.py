@@ -55,8 +55,23 @@ def display_selection(collection, padding):
             iterator += 1
     print(f'{indent(padding)}0. End program')
 
-#def display_syntax_library():
+# Takes a dictionary, selection, and json file name and prints all keys, values, 
+# and messages in the subordinate dictionary
+def display_library_dict(library_dict, selection, message_library):
+    json_file = load_json(message_library)
+    library_item = library_dict[selection]
+    if bool(library_item) != False:
+        print(f'{indent(4)}{selection}:')
+        for item in library_item:
+            #if item == 'Description': 
+            if library_item[item] != '':
+                print(f'{indent(8)}{item}: {library_item[item]}')
+        if messages(json_file, selection) != "":
+            print(f'{indent(8)}Description: {messages(json_file, selection)}')
+    else:
+        print(f'{indent(4)}{selection}: No data found')
 
+# Prints the descrition of a selected item from a list from its corresponding json 
 def display_definition(list, selection, message_library):
     json_file = load_json(message_library)
     selected_item = list[selection - 1]
@@ -67,4 +82,3 @@ def display_definition(list, selection, message_library):
             print(f'{indent(4)}{selected_item}: {messages(json_file, selected_item)}')
     except:
         print(f"{indent(4)}{selected_item}: No entry for this topic yet. Brutal.")
-
